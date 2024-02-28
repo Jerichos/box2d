@@ -902,6 +902,12 @@ void b2World::SolveTOI(const b2TimeStep& step)
 	}
 }
 
+extern "C" {
+	__declspec(dllexport) void WorldStep(b2World* world, float timeStep, int32 velocityIterations, int32 positionIterations) {
+		world->Step(timeStep, velocityIterations, positionIterations);
+	}
+}
+
 void b2World::Step(float dt, int32 velocityIterations, int32 positionIterations)
 {
 	b2Timer stepTimer;
