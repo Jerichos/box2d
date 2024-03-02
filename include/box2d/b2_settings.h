@@ -60,9 +60,11 @@ struct B2_API b2BodyUserData
 	b2BodyUserData()
 	{
 		pointer = 0;
+		entity = -1;
 	}
 
 	/// For legacy compatibility
+	int entity;
 	uintptr_t pointer;
 };
 

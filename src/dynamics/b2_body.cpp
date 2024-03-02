@@ -21,6 +21,9 @@
 // SOFTWARE.
 
 #include "box2d/b2_body.h"
+
+#include <cstdio>
+
 #include "box2d/b2_contact.h"
 #include "box2d/b2_fixture.h"
 #include "box2d/b2_joint.h"
@@ -98,6 +101,11 @@ b2Body::b2Body(const b2BodyDef* bd, b2World* world)
 	m_invI = 0.0f;
 
 	m_userData = bd->userData;
+
+	// print userdata
+	printf("Userdata: %d\n", bd->userData);
+	// pointer
+	printf("Pointer: %d\n", bd->userData.pointer);
 
 	m_fixtureList = nullptr;
 	m_fixtureCount = 0;
